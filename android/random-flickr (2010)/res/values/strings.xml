@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Random Flickr</string>
+    <string name="menu_refresh">Refresh</string>
+    <string name="menu_rotateR">Rotate Right</string>
+    <string name="menu_rotateL">Rotate Left</string>
+    <string name="menu_wallpaper">Set as Wallpaper</string>
+</resources>
