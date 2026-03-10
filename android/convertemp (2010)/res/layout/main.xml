@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+    
+	<TableLayout android:orientation="vertical"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="10dp"
+	    android:stretchColumns="1"
+	>
+	    
+	    <TableRow
+	    	android:orientation="horizontal"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    >
+	    	<TextView
+	    		android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    android:text="@string/celsius"
+			/>
+			<EditText  
+				android:id="@+id/celsius"
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:inputType="numberDecimal|numberSigned"
+			    android:text="37"
+			/>    
+	    </TableRow>
+	    
+		<TableRow
+	    	android:orientation="horizontal"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    >
+	    	<TextView
+	    		android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    android:text="@string/fahrenheit"
+			/>
+			<EditText  
+				android:id="@+id/fahrenheit"
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:inputType="numberDecimal|numberSigned"
+			    android:text="98.6"
+			/>    
+	    </TableRow>
+	    
+	    <TableRow
+	    	android:orientation="horizontal"
+	    	android:layout_width="fill_parent"
+	    	android:layout_height="wrap_content"
+	    >
+	    	<TextView
+	    		android:layout_width="wrap_content" 
+			    android:layout_height="wrap_content"
+			    android:text="@string/kelvin"
+			/>
+			<EditText  
+				android:id="@+id/kelvin"
+			    android:layout_width="fill_parent" 
+			    android:layout_height="wrap_content" 
+			    android:inputType="numberDecimal|numberSigned"
+			    android:text="310.15"
+			/>    
+	    </TableRow>
+	
+	</TableLayout>
+	<TextView 
+		android:layout_width="fill_parent" 
+		android:layout_height="fill_parent"
+		android:padding="10dp"
+		android:text = "How to use the application: E.g. if you wish to convert 35F to other formats, simply enter 35 in the Fahrenheit field. Other values will automatically update." />
+		
+</LinearLayout>
