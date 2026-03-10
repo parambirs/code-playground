@@ -1,0 +1,18 @@
+Application
+{
+	background-color: #AAAAAA;
+	background-gradient-colors: #AAAAAA, #CCCCCC;
+	background-gradient-alphas: 1, 1;
+	theme-color: #333333;
+	color: #333333;
+}
+
+Alert
+{
+	background-color: #AAAAAA;
+	border-color: #AAAAAA;
+	border-alpha: 0.8;
+	background-alpha: 0.8;
+	theme-color: #333333;
+	color: #333333;
+}

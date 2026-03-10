@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:WindowedApplication xmlns:mx="http://www.adobe.com/2006/mxml" layout="absolute" width="300" height="400" creationComplete="startUp();" showStatusBar="false">
+	<mx:ApplicationControlBar x="0" y="0" dock="true" height="60">
+		<mx:HBox width="100%" height="100%" verticalAlign="bottom">
+			<mx:Label styleName="header" id="header" text="VocaBE" fontSize="18"
+					fontAntiAliasType="advanced" letterSpacing="1.5" fontSharpness="-30" fontThickness="40"/>
+			<mx:Spacer width="100%"/>
+			<mx:Image source="assets/Untitled-1.png" width="50" height="50"/>
+		</mx:HBox>
+	</mx:ApplicationControlBar>
+	
+	<mx:Style source="css/style.css"/>
+	<mx:Style>
+        
+        @font-face 
+        {
+            src: local("Arial");
+            fontFamily: "ArialEmbedded";
+        }
+
+        .header {
+            fontFamily: ArialEmbedded;
+        }
+        
+        .word {
+            fontFamily: ArialEmbedded;
+        }
+    </mx:Style>
+    
+	<mx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			import mx.collections.ArrayCollection;
+			private var list:ArrayCollection;
+			private var currentIndex:int;		
+						
+			private function reset():void
+			{
+				list = WordListUtils.getWordList();
+				currentIndex = 0;
+			}
+			
+			private function startUp():void
+			{
+				reset();
+				showNextWord();
+			}
+			
+			private function getNextWord():Object
+			{
+				return list[currentIndex++];
+			}
+			
+			private function showNextWord():void
+			{
+				var obj:Object = getNextWord();
+				lblWord.text = obj["word"];
+				txtDefinition.text = obj["definition"];
+			}
+			
+			private function onBtnNextWordClick(event:MouseEvent):void
+			{
+				showNextWord();
+				
+				if(currentIndex == list.length)
+				{
+					reset();
+				}
+			}
+			
+			private function showAbout():void
+			{
+				Alert.show("(c) 2009 Parambir Singh (parambirs@gmail.com)", "About Us");
+			}
+		]]>
+	</mx:Script>
+	
+	<mx:VBox x="0" y="0" width="100%" height="100%" paddingLeft="5" paddingRight="5">
+	<mx:Spacer height="10"/>
+		<mx:HBox width="100%" height="60" horizontalAlign="center" verticalAlign="middle" >
+			<mx:Label styleName="word" id="lblWord" fontAntiAliasType="advanced" letterSpacing="0.1" fontSize="24" text="Word"/>
+		</mx:HBox>
+		<mx:Text styleName="word" width="100%" height="100%" id="txtDefinition" 
+			fontSize="14" fontAntiAliasType="advanced" fontThickness="40" letterSpacing="0.1"
+			textAlign="center" text="Definition"/>
+		<mx:HBox width="100%" height="60" horizontalAlign="center" verticalAlign="middle">
+			<mx:Button id="btnNextWord" label="Next Word" click="onBtnNextWordClick(event);"/>
+		</mx:HBox>
+	</mx:VBox>
+	<mx:LinkButton label="?" right="5" bottom="5" id="btnAbout" click="showAbout();" fontSize="11"/>
+	
+</mx:WindowedApplication>
