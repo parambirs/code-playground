@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Guess The Number</string>
+    <string name="action_how_to_play">How to play</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ok">OK</string>
+
+</resources>
